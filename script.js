@@ -1,3 +1,4 @@
+//declare variable get element by id
 const display = document.getElementById("display");
 const question = document.getElementById("question");
 const startBtn = document.getElementById("starts");
@@ -38,15 +39,13 @@ const typeController = (e) => {
   if (!validLetters.includes(newLetter)) {
     return;
   }
-
   userText += newLetter;
-
   const newLetterCorrect = validate(newLetter);
-
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
 
-  } else {
+  }
+   else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
     errorCount++
   }
@@ -56,7 +55,6 @@ const typeController = (e) => {
     gameOver();
   }
 };
-
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
@@ -71,7 +69,6 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
-
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -87,39 +84,32 @@ const gameOver = () => {
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-
   addHistory(questionText, timeTaken, errorCount);
-
+  
   // restart everything
   startTime = null;
   errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
-
 const closeModal = () => {
   modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
 };
-
 const start = () => {
   // If already started, do not start again
   if (startTime) return;
-
   let count = 3;
   countdownOverlay.style.display = "flex";
-
+  countdownOverlay.innerHTML = '';
   const startCountdown = setInterval(() => {
-    
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
-
     // finished timer
-    if (count ==0) {
+    if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
-
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
@@ -137,7 +127,5 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = parseInt((currentTime - startTime) / 1000);
-
-
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);

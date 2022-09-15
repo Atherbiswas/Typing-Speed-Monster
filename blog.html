@@ -9,30 +9,54 @@
     <!-- bootstrap cdn link  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-dark">
     <header>
         <section class="mt-4 container">
-            <h1 class="fw-bold text-center">A few common topics of JAVASCRIPT</h1>
+            <h1 class="fw-bold text-center text-white">A few common topics of JAVASCRIPT</h1>
         </section>
     </header>
-    <main class="bg-info">
-        <section class="container w-75">
+    <main>
+        <section class="container w-75 bg-info">
             <h4 class="text-black-50">1.What are the difference between local storage and session storage?</h4>
             <p class="mt-1 fw-semibold"><span class="fs-5">Local Storage:</span> Local storage capacity is 5MB/10MB.Data in local storage doesn't expire at browser close or open in new tab.It must de deleted via javascript or manually.Local storage is useful for dtring data that the user will need to access later.</p>
             <p class="mt-1 fw-semibold"><span class="fs-5">Session Storage:</span> Session storage capacity is 5MB.Data in session storage is cleaned when the page session ends.Session storage is useful for string data that is sensitive.</p>
             <hr>
         </section>
-        <section class="container mt-4 w-75"> 
+        <section class="container mt-4 w-75 bg-info"> 
             <h4 class="text-black-50">2.what are defference between Global scope and block scope?</h4>
             <p class="mt-1 fw-semibold"><span class="fs-5">Global Scope:</span>A variable exists inside or outside a block. If a variable is declared outside all functions or curly braces ({}), it exists in the global scope. The global variables can be accessed by any line of code in the program, including inside blocks.Example: <br> let a = "hello"; <br> function greet () { <br> console.log(a); <br> } <br> greet(); // hello. ...
             </p>
             <p class="mt-1 fw-semibold"><span class="fs-5">Block Scope:</span>Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.</p>
             <hr>
         </section>
-        <section class="container mt-4 w-75">
+        <section class="container mt-4 w-75 bg-info">
             <h4 class="text-black-50">3.How does the work event loop in javascript?</h4>
+            <p class="mt-1 fw-semibold"><span class="fs-5">Event Loop:</span>The event loop is the secret behind JavaScript's asynchronous programming.JavaScript engine executes a script from the top and works its way down creating execution contexts and pushing and popping functions onto and off the call stack.It has three steps.These are Call Stack,Memory Heap,Callback Queue</p>
+            <img class="img-fluid rounded mx-auto d-block" src="Event loop.png" alt="">
+            <p class= "mt-2 fw-semibold">Call Stack: As the execution proceeds line by line, the method calls are pushed onto the call stack in order of execution. Once the execution is complete, the method is popped from the stack.</p>
+            <p class= "mt-1 fw-semibold">Memory Heap: Objects are allocated in a heap which is just a name to denote a large (mostly unstructured) region of memory.</p>
+            <p class= "mt-1 fw-semibold">Callback Queue: The Callback queue is responsible for sending new functions to the track for processing. It follows the queue data structure to maintain the correct sequence in which all operations should be sent for execution</p>
+            <hr>
+        </section>
+        <section class="container mt-4 w-75 bg-info">
+            <h4 class="text-black-50">4.How many way we can get undefined?</h4>
+            <section class="fw-semibold ms-4" >
+            <p>8 ways to get undefined:</p>
+            <p>i. If don't initialize the variable.</p>
+            <p>ii. If the function has no return.</p>
+            <p>iii. if the fuction all parameter don't pass.</p>
+            <p>iv. If the function has return but don't declare what is return. </p>
+            <p>v. If the property doesn't exists in a object but we see that.</p>
+            <p>vi.If access the arry elements outside the index range. </p>
+            <p>vii.If delete any arry elements inside a arry</p>
+            <p>viii.If set a value directly to undefined.</p>
+            </section>
+            <hr>
         </section>
     </main>
+    <footer>
+        <p class="text-white-50 text-center">Copyright @2022. develpoed by: Ather Biswas</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>   
 </body>
