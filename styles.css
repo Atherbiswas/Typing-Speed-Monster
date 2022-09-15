@@ -195,7 +195,7 @@ button {
   }
 }
 /* responsive design for large device */
-@media only screen and (min-width:900px) and (max-width: 1440px) {
+@media only screen and (min-width:864px) and (max-width: 1536px) {
   #histories {
     display: grid;
     grid-template-columns: repeat(3,1fr);
